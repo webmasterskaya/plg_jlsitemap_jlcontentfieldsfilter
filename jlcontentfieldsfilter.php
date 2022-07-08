@@ -41,7 +41,8 @@ class plgJLSitemapJlcontentfieldsfilter extends CMSPlugin
 					'com_content'
 				)
 			)
-			->order($db->escape('c.lft') . ' ' . $db->escape('asc'));
+			->group($db->quoteName('c.id'))
+			->order($db->quoteName('c.lft') . ' ' . $db->escape('asc'));
 
 		if ($multilanguage)
 		{
